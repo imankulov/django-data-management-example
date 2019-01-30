@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description"
+        content="A front-end template that helps you build fast, modern mobile web apps.">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Tech communities in Portugal</title>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet"
+        href="https://code.getmdl.io/1.3.0/material.blue_grey-indigo.min.css">
+  <style>
+    .main-content {
+      max-width: 1400px;
+    }
+    .fullwidth {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+  <header class="mdl-layout__header color-1 inv1">
+    <div class="mdl-layout__header-row">
+      <span class="mdl-layout-title">Tech communities in Portugal</span>
+    </div>
+  </header>
+
+  <main class="mdl-layout__content base main-content">
+
+    <div class="mdl-grid">
+      <!-- top groups plot -->
+      <div class="mdl-card mdl-cell mdl-cell--7-col mdl-shadow--2dp">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">
+            Top groups
+          </h2>
+        </div>
+        <div class="mdl-card__media">
+          {{ top_groups_plot|safe }}
+        </div>
+      </div>
+      <!-- top groups table -->
+      <div class="mdl-cell mdl-cell--5-col">
+        <table
+            class="mdl-data-table mdl-js-data-table fullwidth">
+          <thead class="">
+          <tr>
+            <th class="mdl-data-table__cell--non-numeric">Group Name</th>
+            <th class="mdl-data-table__cell--non-numeric">City</th>
+            <th>Members</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for row in top_groups_df.itertuples %}
+          <tr>
+            <td class="mdl-data-table__cell--non-numeric">
+              {{ row.name }}
+            </td>
+            <td class="mdl-data-table__cell--non-numeric">
+              {{ row.city }}
+            </td>
+            <td>{{ row.members }}</td>
+          </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <!-- growth plot -->
+      <div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">
+            Growth
+          </h2>
+        </div>
+        <div class="mdl-card__media">
+          {{ growth_plot|safe }}
+        </div>
+      </div>
+
+      <!-- dynamic plot -->
+      <div class="mdl-card mdl-cell mdl-cell--6-col mdl-shadow--2dp">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">
+            Dynamic
+          </h2>
+        </div>
+        <div class="mdl-card__media">
+          {{ dynamic_plot|safe }}
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script defer src="https://kozea.github.io/pygal.js/2.0.x/pygal-tooltips.min.js"></script>
+</body>
+</html>

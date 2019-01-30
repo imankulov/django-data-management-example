@@ -1,0 +1,6 @@
+django
+jupyterlab
+pandas
+matplotlib
+pygal
+nbconvert
