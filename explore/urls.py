@@ -3,6 +3,8 @@ from django.urls import path
 from explore.communities import views
 
 urlpatterns = [
+    # hello world example
+    path('hello/', views.hello),
     # simple dashboard
     path('simple/', views.simple_dashboard),
     # simple dasboard with the input form

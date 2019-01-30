@@ -11,6 +11,16 @@ from nbconvert.writers import WriterBase
 
 
 @staff_member_required
+def hello(request):
+    """
+    Hello world example on how template context is passed though
+    """
+    return render(request, 'hello.html', {
+        'user': request.GET.get('user'),
+    })
+
+
+@staff_member_required
 def simple_dashboard(request):
     """
     Simple dashboard example, essentially displaying how Django templates
