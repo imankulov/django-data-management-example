@@ -161,31 +161,27 @@ provided.
 List of examples
 ----------------
 
-- [hello()](./explore/communities/views.py#L13-20). Basic example of a
+- [hello()](./explore/communities/views.py#L13-L20). Basic example of a
   Django view, processing request and returing a response from a template.
   Notice a "@staff_member_required" decorator, the way to hide the view
   from unauthorized users. 
-  
   Template [hello.html](explore/communities/templates/hello.html)
 
-- [simple_dashboard()](./explore/communities/views.py#L23-34). A very simple
+- [simple_dashboard()](./explore/communities/views.py#L23-L34). A very simple
   example showing how you can display your dataset, also protected with
   a "@staff_member_required".
-   
   Template [simple_dashboard.html](explore/communities/templates/simple_dashboard.html)
 
-- [plot_dashboard()](./explore/communities/views.py#L37-53). An example of 
+- [plot_dashboard()](./explore/communities/views.py#L37-L53). An example of 
   use of [pygal](http://pygal.org) to show inline plots.
-   
   Template [plot_dashboard.html](explore/communities/templates/plot_dashboard.html)
 
-- [input_dashboard()](./explore/communities/views.py#L65-96). A more complex
+- [input_dashboard()](./explore/communities/views.py#L65-L96). A more complex
   example of a dashboard with a form. The view uses Django forms to sort and 
   filter data (see FilterForm).
-   
   Template [input_dashboard.html](explore/communities/templates/input_dashboard.html)
  
-- [notebook()](./explore/communities/views.py#L110-120). An example on how you
+- [notebook()](./explore/communities/views.py#L110-L120). An example on how you
   can convert a Jupyter Notebook to HTML and return it from the view. The
   approach employs a nbconvert API. For this to work we had to write a
   custom writer "StringWriter". Also notice how hid all the code and output
@@ -193,9 +189,8 @@ List of examples
   makes the output less cluttered and more suitable for people who care less
   about *what* you do, and more *what are the results*.
   
-- [shiny_dashboard()](./explore/communities/views.py#L123-148). A dashboard
+- [shiny_dashboard()](./explore/communities/views.py#L123-L148). A dashboard
   which simply "looks cool". Uses [Material Design Lite](https://getmdl.io/)
   to format and stylize the dashboard and has two separate files, [reports.py](./explore/communities/reports.py)
   and [graphs.py](./explore/communities/graphs.py) to collect needed information.
-   
   Template [shiny_dashboard.html](explore/communities/templates/shiny_dashboard.html)
